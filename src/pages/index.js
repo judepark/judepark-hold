@@ -72,7 +72,7 @@ const IndexPage = ({data}) => (
 			<br/>
 			Founder of Fair Design methodology.
 			<br/>
-			Graduate of Human Computer Interaction.
+			Researcher of Human Computer Interaction.
 		</HeaderSubtitle>
 	</PageGrid>
 
@@ -90,18 +90,97 @@ const IndexPage = ({data}) => (
 
 		</ProjectCardGrid>
 	</PageGrid2>
+
 	<br/><br/><br/><br/><br/>
+
 	<PageGrid3>
+
+	<PortfolioTitle>
+	ABOUT
+	</PortfolioTitle>
+	
+			<FlipButton link="/about" content="FIND OUT MORE ⯈" hoverContent="ABOUT ME ⯈"></FlipButton>
+
+	</PageGrid3>
+	<br/>
+	
+  </React.Fragment>
+)
+
+
+/* 
+
+To add later when I finish them:
+
+	<PortfolioTitle>
+	DESIGN REEL
+	</PortfolioTitle>
+
+	<PortfolioTitle>
+	ARTICLES
+	</PortfolioTitle>
+
 	<PortfolioTitle>
 	ABOUT
 	</PortfolioTitle>
 
-			<FlipButton link="/about" content="FIND OUT MORE ⯈" hoverContent="VIEW MORE OF MY WORKS ⯈"></FlipButton>
+		<HeaderSubtitle>
+			<br/>
+			<strong>Jude Park</strong> is a UX Designer and Researcher
+			<br/>
+			who develops technological innovations
+			<br/>
+			for social good. 
+			<br/>
+			<br/>
+			<br/>
+			<SiteSocial>
+			<li>
+				<a href="mail:jude@judepark.com" target="_blank">
+					<FaEnvelope size={iconSize}/>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/judepark/" target="_blank">
+					<FaLinkedin size={iconSize}/>
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/judepark/" target="_blank">
+					<FaGithub size={iconSize}/>
+				</a>
+			</li>
+			<li>
+				<a href="https://dribbble.com/judepark/" target="_blank">
+					<FaDribbble size={iconSize}/>
+				</a>
+			</li>
+			<li>
+				<a href="https://medium.com/@judepark" target="_blank">
+					<FaMedium size={iconSize}/>
+				</a>
+			</li>
+		</SiteSocial>
 
-	</PageGrid3>
-	<br/>
-  </React.Fragment>
-)
+			<br/>
+			Industry Curriculum Vitae  ⭳
+
+			<br/>
+			Academic Curriculum Vitae ⭳
+
+			<br/>
+			<br/>
+			<FlipButton link="mailto:jude@judepark.com" content="Hire Me" hoverContent="I'm Available"></FlipButton>
+		</HeaderSubtitle>
+
+*/
+
+
 
 const SiteSocial = styled.ul`
 	display: flex;
