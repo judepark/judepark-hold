@@ -36,22 +36,15 @@ export default class flipButton extends Component {
 }
 
 const FlipButton = styled.a`
-	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
 	line-height: 1.35;
-	display: flex;
-	justify-content: left;
-	align-items: center;
-	color: hsla(0, 0%, 0%, 0.80);
-	border-radius: 2px;
-	border: 1px solid;
-	border-color: transparent;
+	color: hsla(0, 0%, 0%, 0.8);
 	transition: all 0.3s;
 	font-weight: normal;
 	&:hover {
-		border-color: white;
-		color: black;
+		color: hsla(0, 0%, 0%, 0.8);
 	}
 `;
 

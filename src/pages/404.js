@@ -10,7 +10,7 @@ import {Fa500px} from 'react-icons/fa'
 import {FaDribbble} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {FaGithub} from 'react-icons/fa'
-import {IoIosCamera} from 'react-icons/io'
+import {FaVimeo} from 'react-icons/fa'
 import {FaEnvelope} from 'react-icons/fa'
 
 const iconSize = 23;
@@ -21,7 +21,7 @@ const NotFoundPage = () => (
 		<HeaderTitle>
 			<strong>Jude Park</strong>
 			<br/>
-			User Experience Design + Researcher
+			User Experience Designer + Researcher
 		</HeaderTitle>
 
 		<Line>
@@ -30,41 +30,60 @@ const NotFoundPage = () => (
 
 		<SiteSocial>
 			<li>
-				<a href="https://github.com/MaxMcKinney" target="_blank">
+				<IconMail>
+				<a href="mail:jude@judepark.com" target="_blank">
 					<FaEnvelope size={iconSize}/>
 				</a>
+				</IconMail>
 			</li>
 			<li>
-				<a href="https://www.linkedin.com/in/mckinneymax" target="_blank">
+				<IconLinkedin>
+				<a href="https://www.linkedin.com/in/judepark/" target="_blank">
 					<FaLinkedin size={iconSize}/>
 				</a>
+				</IconLinkedin>
 			</li>
 			<li>
-				<a href="https://twitter.com/timmaxmckinney" target="_blank">
-					<FaTwitter size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/MaxMcKinney" target="_blank">
-					<FaGithub size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://dribbble.com/MaxMcKinney" target="_blank">
+				<IconDribble>
+				<a href="https://dribbble.com/judepark/" target="_blank">
 					<FaDribbble size={iconSize}/>
 				</a>
+				</IconDribble>
 			</li>
 			<li>
-				<a href="https://medium.com/@maxmckinney" target="_blank">
+				<IconMedium>
+				<a href="https://medium.com/@judepark" target="_blank">
 					<FaMedium size={iconSize}/>
 				</a>
+				</IconMedium>
+			</li>
+			<li>
+				<IconGithub>
+				<a href="https://github.com/judepark/" target="_blank">
+					<FaGithub size={iconSize}/>
+				</a>
+				</IconGithub>
+			</li>
+			<li>
+				<IconTwitter>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+				</IconTwitter>
+			</li>
+			<li>
+				<IconVimeo>
+				<a href="https://vimeo.com/judepark/" target="_blank">
+					<FaVimeo size={iconSize}/>
+				</a>
+				</IconVimeo>
 			</li>
 		</SiteSocial>
 
 		
 		<HeaderSubtitle>
 			<br/>
-			Uh oh, this page was not found.
+			Uh oh, the page was not found.
 			<br/>
 		</HeaderSubtitle>
 
@@ -73,42 +92,95 @@ const NotFoundPage = () => (
 )
 
 const SiteSocial = styled.ul`
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-list-style: none;
-text-transform: uppercase;
-font-size: 0.7rem;
-font-weight: 500;
-letter-spacing: 1px;
-margin-right: 40px;
-margin-left: -20px;
-margin-bottom: 0px;
-margin-top: -40px;
-animation: ${fadeInDown} .5s;
-/*width: 100%;*/
-li {
-	margin: 0;
-	padding: 0px 20px;
-	a {
-		font-size: 0.7rem;
-		font-weight: 500;
-		text-decoration: none;
-		color: hsla(0, 0%, 0%, 0.3);
-		transition: all 0.6s;
-		&:hover {
-			color: hsla(0, 0%, 0%, 0.80);
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	list-style: none;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-right: 40px;
+	margin-left: -30px;
+	margin-bottom: 0px;
+	margin-top: -50px;
+	animation: ${fadeInDown} .5s;
+	/*width: 100%;*/
+	li {
+		margin: 0;
+		padding: 0px 2px;
+		a {
+			font-size: 0.7rem;
+			font-weight: 500;
+			text-decoration: none;
+			color: hsla(0, 0%, 0%, 0.3);
+			transition: all 0.6s;
 		}
 	}
-}
-@media(max-width: 1155px) {
-	margin-right: 0;
-}
-@media(max-width: 715px) {
-	margin-right: 0;
-}
-`
+	@media(max-width: 1155px) {
+		margin-right: 0;
+	}
+	@media(max-width: 715px) {
+		margin-right: 0;
+	}
+`;
+
+const IconMail = styled.ul`
+a {
+	&:hover {
+		color: #f1d592;
+		}
+	}
+`;
+
+const IconLinkedin = styled.ul`
+a {
+	&:hover {
+		color: #0077B5;
+		}
+	}
+`;
+
+const IconTwitter = styled.ul`
+a {
+	&:hover {
+		color: #1da1f2;
+		}
+	}
+`;
+
+const IconGithub = styled.ul`
+a {
+	&:hover {
+		color: #333;
+		}
+	}
+`;
+
+const IconDribble = styled.ul`
+a {
+	&:hover {
+		color: #ea4c89;
+		}
+	}
+`;
+
+const IconMedium = styled.ul`
+a {
+	&:hover {
+		color: #00ab6c;
+		}
+	}
+`;
+
+const IconVimeo = styled.ul`
+a {
+	&:hover {
+		color: #1ab7ea;
+		}
+	}
+`;
 
 export default NotFoundPage
 
@@ -150,7 +222,7 @@ const HeaderTitle = styled.p`
 		font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
 		color: hsla(0, 0%, 0%, 0.80);
 		line-height: 1.35;
-		letter-spacing:0.05px;
+		letter-spacing:0.2px;
 		font-weight: normal;
 		margin-bottom: 20px;
 		max-width: 800px;
@@ -163,7 +235,7 @@ const HeaderTitle = styled.p`
 const Line = styled.p`
 	animation: ${fadeInDown} 0.5s;
 	marginBottom: 1em;
-	width: 40%;
+	width: 50%;
 	@media(max-width: 1155px) {
 		width: 100%;
 	}

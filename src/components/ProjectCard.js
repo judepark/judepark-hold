@@ -24,7 +24,7 @@ const ProjectCard = (props) => {
 const ProjectCardContainer = styled.div`
 	display: grid;
     width: 100%;
-    background: #ffffff;
+    background: #fafafa;
     border-radius: 4px;
 	grid-template-columns: 40% 1fr;
 	overflow: hidden;
@@ -75,7 +75,7 @@ const ProjectCardContainer = styled.div`
 		right: 0;
 	}
 	@media(max-width: 500px) {
-		grid-template-columns: 10% 1fr;
+		grid-template-columns: 50% 1fr;
 	}
 `;
 

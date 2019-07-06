@@ -7,6 +7,17 @@ import {fadeInDown, fadeInUp, fadeInScaleDown} from './../animations/m-styled-an
 
 import LiveContentCard from '../components/LiveContentCard'
 
+
+import {FaLinkedin} from 'react-icons/fa'
+import {FaMedium} from 'react-icons/fa'
+import {FaDribbble} from 'react-icons/fa'
+import {FaTwitter} from 'react-icons/fa'
+import {FaGithub} from 'react-icons/fa'
+import {FaVimeo} from 'react-icons/fa'
+import {FaEnvelope} from 'react-icons/fa'
+
+const iconSize = 23;
+
 export default function Template({ data }) {
 	return (
 		<React.Fragment>
@@ -72,6 +83,77 @@ export default function Template({ data }) {
 		</ProjectContentGrid>
 
 		<BackgroundColor themeColor={data.markdownRemark.frontmatter.themeColor}/>
+
+		
+		<Footer>
+
+		<Line>
+		<hr></hr>
+		</Line>
+
+		<HeaderTitle>
+			<strong>Jude Park</strong> is a User Experience Designer + Researcher who develops technological innovations for social good.
+		</HeaderTitle>
+		
+		<SiteSocial>
+			<li>
+				<IconMail>
+				<a href="mail:jude@judepark.com" target="_blank">
+					<FaEnvelope size={iconSize}/>
+				</a>
+				</IconMail>
+			</li>
+			<li>
+				<IconLinkedin>
+				<a href="https://www.linkedin.com/in/judepark/" target="_blank">
+					<FaLinkedin size={iconSize}/>
+				</a>
+				</IconLinkedin>
+			</li>
+			<li>
+				<IconDribble>
+				<a href="https://dribbble.com/judepark/" target="_blank">
+					<FaDribbble size={iconSize}/>
+				</a>
+				</IconDribble>
+			</li>
+			<li>
+				<IconMedium>
+				<a href="https://medium.com/@judepark" target="_blank">
+					<FaMedium size={iconSize}/>
+				</a>
+				</IconMedium>
+			</li>
+			<li>
+				<IconGithub>
+				<a href="https://github.com/judepark/" target="_blank">
+					<FaGithub size={iconSize}/>
+				</a>
+				</IconGithub>
+			</li>
+			<li>
+				<IconTwitter>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+				</IconTwitter>
+			</li>
+			<li>
+				<IconVimeo>
+				<a href="https://vimeo.com/judepark/" target="_blank">
+					<FaVimeo size={iconSize}/>
+				</a>
+				</IconVimeo>
+			</li>
+		</SiteSocial>
+
+		<Line>
+		<hr></hr>
+		</Line>
+		
+
+		</Footer>
+
 		</React.Fragment>
 	)
 }
@@ -129,7 +211,7 @@ const ProjectPostTitle = styled.h1`
 
 const ProjectContentGrid = styled.div`
 	display: grid;
-	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 900px) [end] minmax(24px, 1fr);
+	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
 	animation: ${fadeInUp} 1.8s;
 
 	& > * {
@@ -196,6 +278,136 @@ const BackgroundColor = styled.div`
 	height: 100%;
 	background-color: ${props => props.themeColor};
 `;
+
+const Footer = styled.div`
+	background-color: #ffcc00;
+	margin-bottom: -170px;
+	display: grid;
+	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
+	& > * {
+		grid-column: center;
+	}
+`;
+
+const SiteSocial = styled.ul`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	list-style: none;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-right: 40px;
+	margin-left: -30px;
+	margin-bottom: -30px;
+	margin-top: -10px;
+	animation: ${fadeInDown} .5s;
+	/*width: 100%;*/
+	li {
+		margin: 0;
+		padding: 0px 2px;
+		a {
+			font-size: 0.7rem;
+			font-weight: 500;
+			text-decoration: none;
+			color: hsla(0, 0%, 0%, 0.3);
+			transition: all 0.6s;
+		}
+	}
+	@media(max-width: 1155px) {
+		margin-right: 0;
+	}
+	@media(max-width: 715px) {
+		margin-right: 0;
+	}
+`;
+
+const IconMail = styled.ul`
+a {
+	&:hover {
+		color: #f1d592;
+		}
+	}
+`;
+
+const IconLinkedin = styled.ul`
+a {
+	&:hover {
+		color: #0077B5;
+		}
+	}
+`;
+
+const IconTwitter = styled.ul`
+a {
+	&:hover {
+		color: #1da1f2;
+		}
+	}
+`;
+
+const IconGithub = styled.ul`
+a {
+	&:hover {
+		color: #333;
+		}
+	}
+`;
+
+const IconDribble = styled.ul`
+a {
+	&:hover {
+		color: #ea4c89;
+		}
+	}
+`;
+
+const IconMedium = styled.ul`
+a {
+	&:hover {
+		color: #00ab6c;
+		}
+	}
+`;
+
+const IconVimeo = styled.ul`
+a {
+	&:hover {
+		color: #1ab7ea;
+		}
+	}
+`;
+
+const HeaderTitle = styled.h1`
+	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: calc( 14px + (20 - 14) * (100vw - 400px) / (1300 - 400) );
+	color: hsla(0, 0%, 0%, 0.80);
+	line-height: 1.35;
+	font-weight: normal;
+	margin-bottom: 20px;
+	max-width: 500px;
+	margin-top: 0px;
+	letter-spacing:0.2px;
+	@media(max-width: 425px) {
+		width: 20%;
+	}
+`;
+
+const Line = styled.p`
+	opacity: 0; 
+	marginBottom: 1em;
+	width: 100%;
+	@media(max-width: 1155px) {
+		width: 100%;
+	}
+	@media(max-width: 715px) {
+		width: 100%;
+	}
+`;
+
 
 export const query = graphql`
 	query ProjectBySlug($slug: String!) {

@@ -15,14 +15,24 @@ const AboutPage = ({data}) => (
 		<HeaderAction>
 			<HeaderTitle>
 			<br/><br/><br/><br/><br/><br/>
-			ABOUT
+			The Fair Design Mantra
 			</HeaderTitle>
 		</HeaderAction>
 			
 		<HeaderAction>
 			<HeaderSubtitle>			
 			<br/>
-			Hello, I am a UX Designer and Researcher who develops technological innovations for social good. 
+			I as a Designer, will include the experiences of marginalized groups into my design process.
+			<br/>
+			I shall not hide, avoid, avert or diminish experiences of others that I am unfamiliar with,
+			<br/>
+			but integrate identities of people different from me into my work.
+			<br/>
+			In order to create a seamless digital product and service that do not discriminate, bias, or neglect. 
+			<br/>
+			I will advocate for the user, in all its diversity.
+			<br/>
+			To bring voices to the table and empower companies to make inclusive, smart and sustainable decisions. 
 			<br/>
 			</HeaderSubtitle>		
 			<FlipButton link="mailto:jude@judepark.com" content="Hire Me" hoverContent="I'm Available"></FlipButton>

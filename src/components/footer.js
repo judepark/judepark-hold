@@ -27,7 +27,7 @@ const PageFooter = styled.div`
   padding: 0px 20px;
   margin: 0 auto;
 	margin-top: 100px;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
   flex-direction: row;
   align-items: flex-end;
 	justify-content: flex-end;
@@ -41,7 +41,8 @@ const PageFooter = styled.div`
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: flex-end;
-		margin-top: 50px;
+		margin-top: 100px;
+		margin-bottom: 30px;
 		padding: 0 24px;
 	}
 

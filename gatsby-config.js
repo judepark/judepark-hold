@@ -5,6 +5,13 @@ module.exports = {
 		siteUrl: "https://judepark.com"
 	},
 	plugins: [
+		{
+			resolve: `gatsby-source-dribbble`,
+			options: {
+				// You can get your Access Token by following this tutorial: http://developer.dribbble.com/v2/oauth/
+				access_token: 'gO24324sdf34345dfh78i956x22e269df3a4315924b87246a67'
+			}
+		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
 		`gatsby-transformer-sharp`,

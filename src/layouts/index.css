@@ -19,6 +19,7 @@ html {
 	margin: 0 auto;
 	box-sizing: border-box;
 	overflow-y: scroll;
+	background-color: #fafafa;
 }
 body {
   margin: 0;
