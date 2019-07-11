@@ -6,12 +6,12 @@ import {fadeInDown} from './../animations/m-styled-animations'
 
 import {FaLinkedin} from 'react-icons/fa'
 import {FaMedium} from 'react-icons/fa'
-import {Fa500px} from 'react-icons/fa'
 import {FaDribbble} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {FaGithub} from 'react-icons/fa'
 import {FaVimeo} from 'react-icons/fa'
 import {FaEnvelope} from 'react-icons/fa'
+import {FaYoutube} from 'react-icons/fa'
 
 const iconSize = 23;
 
@@ -29,7 +29,7 @@ const NotFoundPage = () => (
 		</Line>
 
 		<SiteSocial>
-			<li>
+		<li>
 				<IconMail>
 				<a href="mail:jude@judepark.com" target="_blank">
 					<FaEnvelope size={iconSize}/>
@@ -42,6 +42,13 @@ const NotFoundPage = () => (
 					<FaLinkedin size={iconSize}/>
 				</a>
 				</IconLinkedin>
+			</li>
+			<li>
+				<IconTwitter>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+				</IconTwitter>
 			</li>
 			<li>
 				<IconDribble>
@@ -65,13 +72,6 @@ const NotFoundPage = () => (
 				</IconGithub>
 			</li>
 			<li>
-				<IconTwitter>
-				<a href="https://twitter.com/judepark/" target="_blank">
-					<FaTwitter size={iconSize}/>
-				</a>
-				</IconTwitter>
-			</li>
-			<li>
 				<IconVimeo>
 				<a href="https://vimeo.com/judepark/" target="_blank">
 					<FaVimeo size={iconSize}/>
@@ -90,6 +90,18 @@ const NotFoundPage = () => (
 	<MButton to="/">Go Back</MButton>
   </ErrorPageGrid>
 )
+
+/*
+
+			<li>
+				<IconYoutube>
+				<a href="https://medium.com/@judepark" target="_blank">
+					<FaYoutube size={iconSize}/>
+				</a>
+				</IconYoutube>
+			</li>
+
+*/
 
 const SiteSocial = styled.ul`
 	display: flex;
@@ -114,7 +126,7 @@ const SiteSocial = styled.ul`
 			font-size: 0.7rem;
 			font-weight: 500;
 			text-decoration: none;
-			color: hsla(0, 0%, 0%, 0.3);
+			color: hsla(0, 0%, 0%, 0.35);
 			transition: all 0.6s;
 		}
 	}
@@ -182,6 +194,14 @@ a {
 	}
 `;
 
+const IconYoutube = styled.ul`
+a {
+	&:hover {
+		color: #ff0000;
+		}
+	}
+`;
+
 export default NotFoundPage
 
 const ErrorPageGrid = styled.div`
@@ -202,15 +222,15 @@ const ErrorPageGrid = styled.div`
 `
 
 const MButton = styled(Link)`
-	border: 1px solid hsla(0, 0%, 0%, 0.3);
-	color: hsla(0, 0%, 0%, 0.3);
+	border: 1px solid hsla(0, 0%, 0%, 0.35);
+	color: hsla(0, 0%, 0%, 0.35);
 	display: flex;
 	padding: 5px 20px;
 	border-radius: 2px;
 	width: fit-content;
 	animation: ${fadeInDown} 0.5s;
 	&:hover {
-		background: white;
+		background: hsla(0, 0%, 0%, 0.02);
 		border-color: hsla(0, 0%, 0%, 0.8);
 		color: hsla(0, 0%, 0%, 0.8);
 	}

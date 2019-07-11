@@ -12,6 +12,7 @@ import {FaTwitter} from 'react-icons/fa'
 import {FaGithub} from 'react-icons/fa'
 import {FaVimeo} from 'react-icons/fa'
 import {FaEnvelope} from 'react-icons/fa'
+import {FaYoutube} from 'react-icons/fa'
 
 import {Link} from 'gatsby'
 
@@ -34,7 +35,7 @@ const IndexPage = ({data}) => (
 		</Line>
 		
 		<SiteSocial>
-			<li>
+		<li>
 				<IconMail>
 				<a href="mail:jude@judepark.com" target="_blank">
 					<FaEnvelope size={iconSize}/>
@@ -47,6 +48,13 @@ const IndexPage = ({data}) => (
 					<FaLinkedin size={iconSize}/>
 				</a>
 				</IconLinkedin>
+			</li>
+			<li>
+				<IconTwitter>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+				</IconTwitter>
 			</li>
 			<li>
 				<IconDribble>
@@ -70,30 +78,22 @@ const IndexPage = ({data}) => (
 				</IconGithub>
 			</li>
 			<li>
-				<IconTwitter>
-				<a href="https://twitter.com/judepark/" target="_blank">
-					<FaTwitter size={iconSize}/>
-				</a>
-				</IconTwitter>
-			</li>
-			<li>
 				<IconVimeo>
 				<a href="https://vimeo.com/judepark/" target="_blank">
 					<FaVimeo size={iconSize}/>
 				</a>
 				</IconVimeo>
 			</li>
-
 		</SiteSocial>
 		
 
 		<HeaderSubtitle>
 			<br/>
-			Welcome to my site.
+			Welcome to my site!
 			<br/>
-			These are my projects, little ventures where I devoted my time and attention over the years.
+			These are my projects from over the years.
 			<br/>
-			Be my guest and feel free to explore.
+			Feel free to explore the collection.
 			<br/>
 		</HeaderSubtitle>
 	</PageGrid>
@@ -101,7 +101,7 @@ const IndexPage = ({data}) => (
 	<PageGrid2>
 
 	<PortfolioTitle>
-	PORTFOLIO
+	RESEARCH
 	</PortfolioTitle>
 
 		<ProjectCardGrid>
@@ -112,6 +112,26 @@ const IndexPage = ({data}) => (
 
 		</ProjectCardGrid>
 	</PageGrid2>
+
+		<PageGrid2>
+
+	<PortfolioTitle>
+	PORTFOLIO
+	</PortfolioTitle>
+
+	<p>A</p>
+
+	</PageGrid2>
+
+	<PageGrid3>
+
+	<PortfolioTitle>
+	DESIGN REEL
+	</PortfolioTitle>
+
+	<p>B</p>
+
+	</PageGrid3>
 
 	<br/><br/><br/><br/><br/>
 
@@ -124,42 +144,22 @@ const IndexPage = ({data}) => (
 	<HeaderSubtitle>			
 			<br/>
 			<strong>Jude Park</strong> is a User Experience Designer + Researcher 
-			<br/>
-			who develops technologies for social good.
-			<br/>
-			Always pondering what is fair in design
-			<br/>
-			Jude is inventing a new approach
-			<br/>
-			to designing user experience. <FlipButton link="/about" content="More ⯈" hoverContent="More ⯈"></FlipButton>
+			who develops technologies for social good. 
+			Always asking what is fair in design, 
+			Jude is inventing a new approach 
+			to designing user experience. <FlipButton link="/fairdesignmovement" content="More ⯈" hoverContent="More ⯈"></FlipButton>
 			<br/>
 	</HeaderSubtitle>	
 
 	</PageGrid3>
 
-
-
+	<br/>
+	<br/>
+	<br/>
 	<br/>
 	<br/>
 	<br/>
 
-	
-
-	<PageGrid3>
-
-	<PortfolioTitle>
-	ABOUT
-	</PortfolioTitle>
-	
-	<HeaderSubtitle>			
-			<br/>
-			<br/>
-	</HeaderSubtitle>	
-
-	</PageGrid3>
-
-	
-	
   </React.Fragment>
 )
 
@@ -167,6 +167,15 @@ const IndexPage = ({data}) => (
 /* 
 
 To add later when I finish them:
+
+			<li>
+				<IconYoutube>
+				<a href="https://medium.com/@judepark" target="_blank">
+					<FaYoutube size={iconSize}/>
+				</a>
+				</IconYoutube>
+			</li>
+
 
 	<PortfolioTitle>
 	DESIGN REEL
@@ -176,54 +185,6 @@ To add later when I finish them:
 	ARTICLES
 	</PortfolioTitle>
 
-	<PortfolioTitle>
-	ABOUT
-	</PortfolioTitle>
-
-		<HeaderSubtitle>
-			<br/>
-			<strong>Jude Park</strong> is a UX Designer and Researcher
-			<br/>
-			who develops technological innovations
-			<br/>
-			for social good. 
-			<br/>
-			<br/>
-			<br/>
-			<SiteSocial>
-			<li>
-				<a href="mail:jude@judepark.com" target="_blank">
-					<FaEnvelope size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/judepark/" target="_blank">
-					<FaLinkedin size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://twitter.com/judepark/" target="_blank">
-					<FaTwitter size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/judepark/" target="_blank">
-					<FaGithub size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://dribbble.com/judepark/" target="_blank">
-					<FaDribbble size={iconSize}/>
-				</a>
-			</li>
-			<li>
-				<a href="https://medium.com/@judepark" target="_blank">
-					<FaMedium size={iconSize}/>
-				</a>
-			</li>
-		</SiteSocial>
-
-			<br/>
 			Industry Curriculum Vitae  ⭳
 
 			<br/>
@@ -261,14 +222,14 @@ const SiteSocial = styled.ul`
 			font-size: 0.7rem;
 			font-weight: 500;
 			text-decoration: none;
-			color: hsla(0, 0%, 0%, 0.3);
+			color: hsla(0, 0%, 0%, 0.35);
 			transition: all 0.6s;
 		}
 	}
 	@media(max-width: 1155px) {
 		margin-right: 0;
 	}
-	@media(max-width: 715px) {
+	@media(max-width: 720px) {
 		margin-right: 0;
 	}
 `;
@@ -329,6 +290,14 @@ a {
 	}
 `;
 
+const IconYoutube = styled.ul`
+a {
+	&:hover {
+		color: #ff0000;
+		}
+	}
+`;
+
 
 
 
@@ -341,10 +310,15 @@ const PageGrid = styled.div`
 `;
 
 const PageGrid2 = styled.div`
-	display: grid;
+	display: inline-grid;
+	max-width: 50%;
 	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
 	& > * {
 		grid-column: center;
+	}
+	@media(max-width: 720px) {
+		display: grid;
+		max-width: 100%;
 	}
 `;
 
@@ -368,7 +342,7 @@ const HeaderTitle = styled.h1`
 	max-width: 800px;
 	margin-top: 190px;
 	letter-spacing:0.2px;
-	@media(max-width: 425px) {
+	@media(max-width: 720px) {
 		margin-top: 130px;
 	}
 `;
@@ -380,22 +354,21 @@ const Line = styled.p`
 	@media(max-width: 1155px) {
 		width: 100%;
 	}
-	@media(max-width: 715px) {
+	@media(max-width: 720px) {
 		width: 100%;
 	}
 `;
 
 const HeaderSubtitle = styled.h3`
-	margin-bottom: 170px;
-	max-width: 350px;
+	margin-bottom: 0px;
+	max-width: 600px;
 	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	letter-spacing: -.02em;
 	line-height: 1.35;
 	font-weight: normal;
-	max-width: 1000px;
 	animation: ${fadeInDown} 0.5s;
 	@media(max-width: 425px) {
 		margin-top: 130px;
@@ -404,10 +377,11 @@ const HeaderSubtitle = styled.h3`
 
 const PortfolioTitle = styled.p`
 	margin-bottom: 30px;
+	margin-top: 170px;
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	line-height: 1.35;
 	letter-spacing: 0.5px;
 	font-weight: normal;

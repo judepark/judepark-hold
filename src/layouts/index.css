@@ -19,7 +19,7 @@ html {
 	margin: 0 auto;
 	box-sizing: border-box;
 	overflow-y: scroll;
-	background-color: #fafafa;
+	background-color: hsla(0, 0%, 0%, 0.02);
 }
 body {
   margin: 0;
@@ -805,3 +805,14 @@ video {
 	z-index: 90000;
 	object-fit: cover;
 }
+
+
+
+
+
+
+
+
+
+
+

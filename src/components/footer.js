@@ -8,7 +8,7 @@ const Footer = () => {
 		<div>
       <br />
       <footer>
-       © {new Date().getFullYear()} Jude Park
+       © {new Date().getFullYear()} JUDE PARK
        <br />
 				{` `}
         </footer>
@@ -18,12 +18,13 @@ const Footer = () => {
   )
 }
 
+
 const PageFooter = styled.div`
 	display: flex;
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: calc( 17px + (22 - 17) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.80);
+	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
+	color: hsla(0, 0%, 0%, 0.35);
   padding: 0px 20px;
   margin: 0 auto;
 	margin-top: 100px;
@@ -41,7 +42,7 @@ const PageFooter = styled.div`
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: flex-end;
-		margin-top: 100px;
+		margin-top: 110px;
 		margin-bottom: 30px;
 		padding: 0 24px;
 	}

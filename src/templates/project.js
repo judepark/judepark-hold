@@ -15,8 +15,9 @@ import {FaTwitter} from 'react-icons/fa'
 import {FaGithub} from 'react-icons/fa'
 import {FaVimeo} from 'react-icons/fa'
 import {FaEnvelope} from 'react-icons/fa'
+import {FaYoutube} from 'react-icons/fa'
 
-const iconSize = 23;
+const iconSize = 20;
 
 export default function Template({ data }) {
 	return (
@@ -26,12 +27,18 @@ export default function Template({ data }) {
             <meta name="theme-color" content={data.markdownRemark.frontmatter.themeColor}/>
 		</Helmet>
 
-		<ProjectHeader themeColor={data.markdownRemark.frontmatter.themeColor}>
-			<Img style={{position: 'static', top: 0, left: 0, width: '100%', height: `100%`}} fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}/>
-			<ProjectPostTitle>{data.markdownRemark.frontmatter.title}</ProjectPostTitle>
-		</ProjectHeader>
-
 		<ProjectContentGrid>
+		<ProjectHeader themeColor={data.markdownRemark.frontmatter.themeColor}>
+
+			<ProjectPostTitle>{data.markdownRemark.frontmatter.title}</ProjectPostTitle>
+			<ImageLayout>
+			<Img style={{position: 'static', top: 0, left: 0, width: '100%', height: `100%`}} fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}/>
+			</ImageLayout>
+
+		</ProjectHeader>
+		</ProjectContentGrid>
+
+		<ProjectContentGrid2>
 
 			<ProjectDetails>
 				<div>
@@ -80,7 +87,7 @@ export default function Template({ data }) {
 			}
 			
 
-		</ProjectContentGrid>
+		</ProjectContentGrid2>
 
 		<BackgroundColor themeColor={data.markdownRemark.frontmatter.themeColor}/>
 
@@ -96,7 +103,7 @@ export default function Template({ data }) {
 		</HeaderTitle>
 		
 		<SiteSocial>
-			<li>
+		<li>
 				<IconMail>
 				<a href="mail:jude@judepark.com" target="_blank">
 					<FaEnvelope size={iconSize}/>
@@ -109,6 +116,13 @@ export default function Template({ data }) {
 					<FaLinkedin size={iconSize}/>
 				</a>
 				</IconLinkedin>
+			</li>
+			<li>
+				<IconTwitter>
+				<a href="https://twitter.com/judepark/" target="_blank">
+					<FaTwitter size={iconSize}/>
+				</a>
+				</IconTwitter>
 			</li>
 			<li>
 				<IconDribble>
@@ -132,13 +146,6 @@ export default function Template({ data }) {
 				</IconGithub>
 			</li>
 			<li>
-				<IconTwitter>
-				<a href="https://twitter.com/judepark/" target="_blank">
-					<FaTwitter size={iconSize}/>
-				</a>
-				</IconTwitter>
-			</li>
-			<li>
 				<IconVimeo>
 				<a href="https://vimeo.com/judepark/" target="_blank">
 					<FaVimeo size={iconSize}/>
@@ -158,20 +165,39 @@ export default function Template({ data }) {
 	)
 }
 
+/*
+
+			<li>
+				<IconYoutube>
+				<a href="https://medium.com/@judepark" target="_blank">
+					<FaYoutube size={iconSize}/>
+				</a>
+				</IconYoutube>
+			</li>
+
+*/
+
 const ProjectHeader = styled.div`
 	height: 500px;
 	display: flex;
 	justify-content: left;
 	align-items: center;
 	position: relative;
-	padding: 0px 24px;
+	padding: 0px 0px;
 
 
 	& img {
 		animation: ${fadeInDown} 1s;
 		text-align: right;
 		max-width:100%;
-		padding: 0px 0px 0px 0px;
+		position:absolute;
+		padding: 0px 0px 0px 400px;
+		
+
+		@media (max-width: 720px) {
+			padding: 0px 0px 0px 0px;
+			
+		}
 	}
 
 	&:after {
@@ -184,34 +210,53 @@ const ProjectHeader = styled.div`
 		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, ${props => props.themeColor} 100%);
 	}
 
-	@media (max-width: 715px) {
+	@media (max-width: 720px) {
 		height: 500px;
 	}
 `;
 
+
+const ImageLayout = styled.div`
+
+`;
+
+
+
 const ProjectPostTitle = styled.h1`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: calc( 40px + (45 - 40) * (100vw - 400px) / (1300 - 400) );
+	font-size: calc( 35px + (40 - 35) * (100vw - 400px) / (1300 - 400) );
 	color: hsla(0, 0%, 0%, 0.80);
 	line-height: 1.35;
 	padding: 10px 15px 10px 15px;
-	font-weight: bold;
+	font-weight: normal;
 	text-align: left;
+	max-width: 720px;
 	background-color: white;
 	display:block;
 	z-index: 5;
 	animation: ${fadeInScaleDown} 1.5s ease-out;
 
-	@media(max-width: 715px) {
-		font-size: 2.2rem;
-		line-height: 1;
+	@media(max-width: 720px) {
 	}
 `;
 
 const ProjectContentGrid = styled.div`
 	display: grid;
 	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
+	animation: ${fadeInUp} 1.8s;
+
+	& > * {
+		grid-column: center;
+	}
+	p {
+		opacity: 0.85;
+	}
+`;
+
+const ProjectContentGrid2 = styled.div`
+	display: grid;
+	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 720px) [end] minmax(24px, 12fr);
 	animation: ${fadeInUp} 1.8s;
 
 	& > * {
@@ -256,7 +301,7 @@ const ProjectDetailsTitle = styled.div`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	line-height: 1.35;
 	letter-spacing: 0.5px;
 	font-weight: normal;
@@ -302,24 +347,24 @@ const SiteSocial = styled.ul`
 	margin-right: 40px;
 	margin-left: -30px;
 	margin-bottom: -30px;
-	margin-top: -10px;
+	margin-top: -20px;
 	animation: ${fadeInDown} .5s;
 	/*width: 100%;*/
 	li {
 		margin: 0;
-		padding: 0px 2px;
+		padding: 0px 1px;
 		a {
 			font-size: 0.7rem;
 			font-weight: 500;
 			text-decoration: none;
-			color: hsla(0, 0%, 0%, 0.3);
+			color: hsla(0, 0%, 0%, 0.35);
 			transition: all 0.6s;
 		}
 	}
 	@media(max-width: 1155px) {
 		margin-right: 0;
 	}
-	@media(max-width: 715px) {
+	@media(max-width: 720px) {
 		margin-right: 0;
 	}
 `;
@@ -380,19 +425,27 @@ a {
 	}
 `;
 
+const IconYoutube = styled.ul`
+a {
+	&:hover {
+		color: #ff0000;
+		}
+	}
+`;
+
 const HeaderTitle = styled.h1`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: calc( 14px + (20 - 14) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.80);
+	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
+	color: hsla(0, 0%, 0%, 0.35);
 	line-height: 1.35;
 	font-weight: normal;
 	margin-bottom: 20px;
-	max-width: 500px;
+	max-width: 420px;
 	margin-top: 0px;
 	letter-spacing:0.2px;
-	@media(max-width: 425px) {
-		width: 20%;
+	@media(max-width: 720px) {
+		width: 80%;
 	}
 `;
 
@@ -403,7 +456,7 @@ const Line = styled.p`
 	@media(max-width: 1155px) {
 		width: 100%;
 	}
-	@media(max-width: 715px) {
+	@media(max-width: 720px) {
 		width: 100%;
 	}
 `;

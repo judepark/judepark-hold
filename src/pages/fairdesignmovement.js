@@ -8,14 +8,14 @@ import { graphql } from "gatsby"
 
 import {fadeInDown} from './../animations/m-styled-animations'
 
-const AboutPage = ({data}) => (
+const FairDesignMovementPage = ({data}) => (
   <React.Fragment>
 	<Helmet title={data.site.siteMetadata.title + ' | ' + "About"}></Helmet>
 	<PageGrid>
 		<HeaderAction>
 			<HeaderTitle>
 			<br/><br/><br/><br/><br/><br/>
-			The Fair Design Mantra
+			The Fair Design Movement
 			</HeaderTitle>
 		</HeaderAction>
 			
@@ -24,19 +24,38 @@ const AboutPage = ({data}) => (
 			<br/>
 			I as a Designer, will include the experiences of marginalized groups into my design process.
 			<br/>
-			I shall not hide, avoid, avert or diminish experiences of others that I am unfamiliar with,
 			<br/>
-			but integrate identities of people different from me into my work.
+			I shall not hide, avoid or diminish experiences of others, but integrate identities of people different from me into my work.
 			<br/>
-			In order to create a seamless digital product and service that do not discriminate, bias, or neglect. 
 			<br/>
-			I will advocate for the user, in all its diversity.
+			In order to create a seamless digital product and service that do not discriminate, bias or neglect,
 			<br/>
-			To bring voices to the table and empower companies to make inclusive, smart and sustainable decisions. 
 			<br/>
+			I will advocate for the user in all their diversity.
+			<br/>
+			<br/>
+			With my seat at the table, I will bring voices that can empower companies to make inclusive and smart decisions. 
+			<br/>
+			<br/>
+			<br/>
+			[SIGNATURE]
 			</HeaderSubtitle>		
-			<FlipButton link="mailto:jude@judepark.com" content="Hire Me" hoverContent="I'm Available"></FlipButton>
 		</HeaderAction>
+
+		<HeaderAction>
+			<HeaderTitle>
+			To join the Fair Design Movement, download the declaration page to sign, and follow the hashtag: #fairdesignmovement
+			</HeaderTitle>
+		</HeaderAction>
+
+
+
+	</PageGrid>
+  </React.Fragment>
+)
+
+
+/*
 
 		<HeaderAction>
 			<HeaderTitle>
@@ -142,9 +161,11 @@ const AboutPage = ({data}) => (
 		</HeaderAction>
 		
 		<FlickrPhotoGrid></FlickrPhotoGrid>
-	</PageGrid>
-  </React.Fragment>
-)
+
+<FlipButton link="mailto:jude@judepark.com" content="Hire Me" hoverContent="I'm Available"></FlipButton>
+
+
+*/
 
 const PageGrid = styled.div`
 	display: grid;
@@ -182,15 +203,14 @@ const HeaderTitle = styled.h1`
 
 const HeaderSubtitle = styled.h3`
 	margin-bottom: 100px;
-	max-width: 350px;
+	max-width: 600px;
 	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	letter-spacing: -.02em;
 	line-height: 1.35;
 	font-weight: normal;
-	max-width: 400px;
 	animation: ${fadeInDown} 0.5s;
 	@media(max-width: 425px) {
 		margin-top: 130px;
@@ -221,7 +241,7 @@ const PortfolioTitle = styled.p`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	line-height: 1.35;
 	letter-spacing: 0.5px;
 	font-weight: normal;
@@ -231,7 +251,7 @@ const PortfolioTitle = styled.p`
 	}
 `;
 
-export default AboutPage
+export default FairDesignMovementPage
 
 export const query = graphql`
 	query SiteTitlePhotoQuery {

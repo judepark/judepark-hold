@@ -50,6 +50,7 @@ const ProjectCardContainer = styled.div`
 		display: inline-block;
 		line-height: 1.35;
 		font-weight: normal;
+		margin-right: 0px;
 		margin-left: 0px;
 		margin-top: 5px;
 		margin-bottom: 0px;
@@ -60,9 +61,10 @@ const ProjectCardContainer = styled.div`
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 		font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
 		letter-spacing: -.02em;
-		color: hsla(0, 0%, 0%, 0.30);
+		color: hsla(0, 0%, 0%, 0.35);
 		display: inline-block;
 		line-height: 1.35;
+		margin-right: 0px;
 		margin-left: 0px;
 		margin-top: 3px;
 		margin-bottom: 0px;
@@ -91,7 +93,7 @@ const ReadMore = styled.span`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.35);
 	display: inline-block;
 	opacity: 1;
 	border-bottom: 1px solid #cecece;
