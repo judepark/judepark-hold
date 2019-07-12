@@ -10,13 +10,13 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 		const slug = createFilePath({
 			node,
 			getNode,
-			basePath: 'projects'
+			basePath: 'articles'
 		});
 		// Add the newly created slug to the node itself
 		createNodeField({
 			node,
 			name: 'slug',
-			value: `/project${slug}`
+			value: `/article${slug}`
 		});
 	}
 };
@@ -40,7 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
 		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
 		  createPage({
 			path: node.fields.slug,
-			component: path.resolve(`./src/templates/project.js`),
+			component: path.resolve(`./src/templates/article.js`),
 			context: {
 			  // Data passed to context is available in page queries as GraphQL variables.
 			  slug: node.fields.slug,

@@ -1,9 +1,12 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import styled from 'styled-components'
-import ProjectCard from '../components/ProjectCard';
+import ArticleCard from '../components/ArticleCard';
 
 import {fadeInDown} from './../animations/m-styled-animations'
+import {MoveUp} from './../animations/m-styled-animations'
+import {LoadScreen} from './../animations/m-styled-animations'
+
 
 import {FaLinkedin} from 'react-icons/fa'
 import {FaMedium} from 'react-icons/fa'
@@ -23,6 +26,10 @@ const iconSize = 23;
 
 const IndexPage = ({data}) => (
   <React.Fragment>
+	  <LoadingScreen>
+	  ⠀
+	  </LoadingScreen>
+	  
 	  <PageGrid>
 		<HeaderTitle>
 			<strong>Jude Park</strong>
@@ -104,24 +111,33 @@ const IndexPage = ({data}) => (
 	RESEARCH
 	</PortfolioTitle>
 
-		<ProjectCardGrid>
+		<ArticleCardGrid>
 
 			{data.allMarkdownRemark.edges.map(({node}) => (
-				<ProjectCard data={node} key={node.key}></ProjectCard>
+				<ArticleCard data={node} key={node.key}></ArticleCard>
 			))}
 
-		</ProjectCardGrid>
+		</ArticleCardGrid>
 	</PageGrid2>
 
-		<PageGrid2>
+	
+	<PageGrid2>
 
 	<PortfolioTitle>
 	PORTFOLIO
 	</PortfolioTitle>
 
-	<p>A</p>
+<Gallery>
+
+<a class="grid-img" href="https://dribbble.com/shots/6729418-Book-of-Revelations"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729418/book_of_revelations_dribble_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem><p>Book of Revelations</p></GalleryItem></a>
+
+<a class="grid-img" href="https://dribbble.com/shots/6729227-JUDE-Journal-Vol-1"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729227/jude_journal_dribble_page_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem><p>JUDE Journal</p></GalleryItem></a>
+
+</Gallery>
 
 	</PageGrid2>
+
+
 
 	<PageGrid3>
 
@@ -213,7 +229,7 @@ const SiteSocial = styled.ul`
 	margin-left: -30px;
 	margin-bottom: 0px;
 	margin-top: -50px;
-	animation: ${fadeInDown} .5s;
+	animation: ${fadeInDown} 1s;
 	/*width: 100%;*/
 	li {
 		margin: 0;
@@ -223,7 +239,7 @@ const SiteSocial = styled.ul`
 			font-weight: 500;
 			text-decoration: none;
 			color: hsla(0, 0%, 0%, 0.35);
-			transition: all 0.6s;
+			transition: all 0.3s;
 		}
 	}
 	@media(max-width: 1155px) {
@@ -316,7 +332,7 @@ const PageGrid2 = styled.div`
 	& > * {
 		grid-column: center;
 	}
-	@media(max-width: 720px) {
+	@media(max-width: 1000px) {
 		display: grid;
 		max-width: 100%;
 	}
@@ -348,12 +364,9 @@ const HeaderTitle = styled.h1`
 `;
 
 const Line = styled.p`
-	animation: ${fadeInDown} 0.5s;
+	animation: ${fadeInDown} 1s;
 	marginBottom: 1em;
 	width: 50%;
-	@media(max-width: 1155px) {
-		width: 100%;
-	}
 	@media(max-width: 720px) {
 		width: 100%;
 	}
@@ -369,7 +382,7 @@ const HeaderSubtitle = styled.h3`
 	letter-spacing: -.02em;
 	line-height: 1.35;
 	font-weight: normal;
-	animation: ${fadeInDown} 0.5s;
+	animation: ${fadeInDown} 1s;
 	@media(max-width: 425px) {
 		margin-top: 130px;
 	}
@@ -391,7 +404,7 @@ const PortfolioTitle = styled.p`
 	}
 `;
 
-const ProjectCardGrid = styled.div`
+const ArticleCardGrid = styled.div`
 	display: grid;
 	width: 100%;
 	grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
@@ -402,11 +415,38 @@ const ProjectCardGrid = styled.div`
 	}
 `;
 
+const Gallery = styled.div`
+display: grid;
+grid-template-columns: repeat(2, 0fr);
+grid-template-rows: repeat(2, 0fr);
+margin-bottom: 20px;
+grid-gap: 20px;
+animation: ${fadeInDown} 1s;
+a {
+	&:hover {
+		animation: ${MoveUp} 0.3s;
+		animation-fill-mode: forwards;  
+		}
+	}
+
+`;
+
+const GalleryItem = styled.div`
+margin-bottom: -40px;
+margin-top: -30px;
+`;
+
+const LoadingScreen = styled.div`
+background-color: hsla(0, 0%, 0%, 0.80);
+animation: ${LoadScreen} 1s;
+animation-fill-mode: forwards;  
+margin-bottom:-30px
+`;
 
 export default IndexPage
 
 export const query = graphql`
-query ProjectQuery {
+query ArticleQuery {
 	allMarkdownRemark(sort: {fields: [frontmatter___sortDate], order: DESC}) {
 		edges {
 		  node {
@@ -415,7 +455,7 @@ query ProjectQuery {
 			}
 			frontmatter {
 			  title
-			  projectShortBrief
+			  articleShortBrief
 			  themeColor
 			  accentColor
 			  image {

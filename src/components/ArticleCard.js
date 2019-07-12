@@ -3,25 +3,25 @@ import {Link} from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-const ProjectCard = (props) => {
+const ArticleCard = (props) => {
   return (
 	<Link to={props.data.fields.slug}>
-		<ProjectCardContainer>
-			<Img className="project-card-image" fluid={props.data.frontmatter.image.childImageSharp.fluid} alt="Project Image"/>
-			<ProjectCardContent>
+		<ArticleCardContainer>
+			<Img className="article-card-image" fluid={props.data.frontmatter.image.childImageSharp.fluid} alt="Article Image"/>
+			<ArticleCardContent>
 				<h4>{props.data.frontmatter.title}</h4>
-				<p>{props.data.frontmatter.projectShortBrief}</p>
+				<p>{props.data.frontmatter.articleShortBrief}</p>
 				<br/>
-				<ReadMore theme={props.data.frontmatter.accentColor}>View Project</ReadMore>
-			</ProjectCardContent>
-		</ProjectCardContainer>
+				<ReadMore theme={props.data.frontmatter.accentColor}>Read Article</ReadMore>
+			</ArticleCardContent>
+		</ArticleCardContainer>
 	</Link>
   )
 }
 
 // TODO: Create a style component wrapper for the gatsby-image component
 
-const ProjectCardContainer = styled.div`
+const ArticleCardContainer = styled.div`
 	display: grid;
     width: 100%;
     background: #fafafa;
@@ -29,12 +29,12 @@ const ProjectCardContainer = styled.div`
 	grid-template-columns: 40% 1fr;
 	overflow: hidden;
 	height: 300px;
-	.recent-project-content {
+	.recent-article-content {
 		grid-column: 2;
 		padding: 40px 32px;
 		align-self: center;
 	}
-	.project-card-image {
+	.article-card-image {
 		grid-column: 1;
 		padding: 0;
 		height: 100%;
@@ -81,7 +81,7 @@ const ProjectCardContainer = styled.div`
 	}
 `;
 
-const ProjectCardContent = styled.div`
+const ArticleCardContent = styled.div`
 	grid-column: 2;
 	padding: 40px 0px 40px 32px;
 	align-self: center;
@@ -112,4 +112,4 @@ const ReadMore = styled.span`
 	}
 `;
 
-export default ProjectCard;
+export default ArticleCard;

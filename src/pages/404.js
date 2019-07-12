@@ -127,7 +127,7 @@ const SiteSocial = styled.ul`
 			font-weight: 500;
 			text-decoration: none;
 			color: hsla(0, 0%, 0%, 0.35);
-			transition: all 0.6s;
+			transition: all 0.3s;
 		}
 	}
 	@media(max-width: 1155px) {

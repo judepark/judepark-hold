@@ -42,3 +42,34 @@ export const fadeInScaleDown = keyframes`
 		opacity: 1;
 	}
 `;
+
+// Move
+
+export const MoveUp = keyframes`
+	0% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-5px);
+	}
+`;
+
+// Loading Screen
+
+export const LoadScreen = keyframes`
+	0% {
+		transform: scale(2);
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+	99% {
+		transform: scaleY(150.5);
+		opacity: 0;
+	}
+	100% {
+		transform: scaleY(0);
+		opacity: 0;
+	}
+`;
