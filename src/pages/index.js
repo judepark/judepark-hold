@@ -21,6 +21,8 @@ import {Link} from 'gatsby'
 
 import FlipButton from '../components/FlipButton';
 
+import Video from "../components/Video"
+
 
 const iconSize = 23;
 
@@ -108,7 +110,7 @@ const IndexPage = ({data}) => (
 	<PageGrid2>
 
 	<PortfolioTitle>
-	RESEARCH
+	ARTICLES
 	</PortfolioTitle>
 
 		<ArticleCardGrid>
@@ -129,27 +131,14 @@ const IndexPage = ({data}) => (
 
 <Gallery>
 
-<a class="grid-img" href="https://dribbble.com/shots/6729418-Book-of-Revelations"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729418/book_of_revelations_dribble_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem><p>Book of Revelations</p></GalleryItem></a>
+<a class="grid-img" href="https://dribbble.com/shots/6729418-Book-of-Revelations"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729418/book_of_revelations_dribble_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem>Book of Revelations</GalleryItem></a>
 
-<a class="grid-img" href="https://dribbble.com/shots/6729227-JUDE-Journal-Vol-1"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729227/jude_journal_dribble_page_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem><p>JUDE Journal</p></GalleryItem></a>
+<a class="grid-img" href="https://dribbble.com/shots/6729227-JUDE-Journal-Vol-1"><img src="https://cdn.dribbble.com/users/1813673/screenshots/6729227/jude_journal_dribble_page_reduced_4x.png" alt="" width="210" height="155"></img><GalleryItem>JUDE Journal</GalleryItem></a>
 
 </Gallery>
 
 	</PageGrid2>
 
-
-
-	<PageGrid3>
-
-	<PortfolioTitle>
-	DESIGN REEL
-	</PortfolioTitle>
-
-	<p>B</p>
-
-	</PageGrid3>
-
-	<br/><br/><br/><br/><br/>
 
 	<PageGrid3>
 
@@ -160,7 +149,7 @@ const IndexPage = ({data}) => (
 	<HeaderSubtitle>			
 			<br/>
 			<strong>Jude Park</strong> is a User Experience Designer + Researcher 
-			who develops technologies for social good. 
+			who develops technologies for social change. 
 			Always asking what is fair in design, 
 			Jude is inventing a new approach 
 			to designing user experience. <FlipButton link="/fairdesignmovement" content="More ⯈" hoverContent="More ⯈"></FlipButton>
@@ -210,6 +199,21 @@ To add later when I finish them:
 			<br/>
 			<FlipButton link="mailto:jude@judepark.com" content="Hire Me" hoverContent="I'm Available"></FlipButton>
 		</HeaderSubtitle>
+
+
+		
+	<PageGrid3>
+
+	<PortfolioTitle>
+	DESIGN REEL
+	</PortfolioTitle>
+
+	<Video
+        videoSrcURL="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        videoTitle="Official Music Video on YouTube"
+      />
+
+	</PageGrid3>
 
 */
 
@@ -347,7 +351,7 @@ const PageGrid3 = styled.div`
 	}
 `;
 
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled.div`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 19px + (25 - 19) * (100vw - 400px) / (1300 - 400) );
@@ -372,7 +376,7 @@ const Line = styled.p`
 	}
 `;
 
-const HeaderSubtitle = styled.h3`
+const HeaderSubtitle = styled.div`
 	margin-bottom: 0px;
 	max-width: 600px;
 	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -388,7 +392,7 @@ const HeaderSubtitle = styled.h3`
 	}
 `;
 
-const PortfolioTitle = styled.p`
+const PortfolioTitle = styled.div`
 	margin-bottom: 30px;
 	margin-top: 170px;
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -408,7 +412,7 @@ const ArticleCardGrid = styled.div`
 	display: grid;
 	width: 100%;
 	grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
-	grid-gap: 40px;
+	grid-gap: 0px;
 	animation: ${fadeInDown} 1s;
 	@media (max-width: 500px) {
 		grid-template-columns: 1fr;
@@ -423,9 +427,18 @@ margin-bottom: 20px;
 grid-gap: 20px;
 animation: ${fadeInDown} 1s;
 a {
+font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
+color: hsla(0, 0%, 0%, 0.35);
+line-height: 1.35;
+letter-spacing: 0.5px;
+font-weight: normal;
+color: hsla(0, 0%, 0%, 0.35);
 	&:hover {
 		animation: ${MoveUp} 0.3s;
-		animation-fill-mode: forwards;  
+		animation-fill-mode: forwards;
+		color: hsla(0, 0%, 0%, 0.8);
 		}
 	}
 
@@ -447,7 +460,7 @@ export default IndexPage
 
 export const query = graphql`
 query ArticleQuery {
-	allMarkdownRemark(sort: {fields: [frontmatter___sortDate], order: DESC}) {
+	allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
 		edges {
 		  node {
 			fields {
@@ -455,9 +468,9 @@ query ArticleQuery {
 			}
 			frontmatter {
 			  title
-			  articleShortBrief
 			  themeColor
 			  accentColor
+			  date(formatString: "MMM D, YYYY")
 			  image {
 				childImageSharp{
 				  fluid(maxWidth: 900) {

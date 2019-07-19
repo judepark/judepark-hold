@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import {fadeInDown, fadeInUp, fadeInScaleDown} from './../animations/m-styled-animations'
+import {LoadScreen} from './../animations/m-styled-animations'
 
 import LiveContentCard from '../components/LiveContentCard'
 
@@ -17,73 +18,73 @@ import {FaVimeo} from 'react-icons/fa'
 import {FaEnvelope} from 'react-icons/fa'
 import {FaYoutube} from 'react-icons/fa'
 
+import {FaRegImage} from 'react-icons/fa'
+import {FaCreativeCommons} from 'react-icons/fa'
+
+
+
 const iconSize = 20;
+const iconSize2 = 15;
 
 export default function Template({ data }) {
+
+	
+
 	return (
 		<React.Fragment>
+
+		<LoadingScreen accentColor={data.markdownRemark.frontmatter.accentColor}>
+	  ⠀
+	  </LoadingScreen>
 
 		<Helmet title={data.site.siteMetadata.title + ' | ' + data.markdownRemark.frontmatter.title}>
             <meta name="theme-color" content={data.markdownRemark.frontmatter.themeColor}/>
 		</Helmet>
-
+		
 		<ArticleContentGrid>
-		<ArticleHeader themeColor={data.markdownRemark.frontmatter.themeColor}>
+			<ArticleHeadingBanner themeColor={data.markdownRemark.frontmatter.themeColor}>
+			</ArticleHeadingBanner>
 
-			<ArticlePostTitle>{data.markdownRemark.frontmatter.title}</ArticlePostTitle>
-			<ImageLayout>
-			<Img style={{position: 'static', top: 0, left: 0, width: '100%', height: `100%`}} fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}/>
-			</ImageLayout>
+			<ArticleHeader themeColor={data.markdownRemark.frontmatter.themeColor}>
+				<ArticlePostTitle>{data.markdownRemark.frontmatter.title}</ArticlePostTitle>
+				<ImageLayout>
+				<Img style={{position: 'static', top: 0, left: 0, width: '100%', height: `100%`}} fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}/>
+				</ImageLayout>
+			</ArticleHeader>
 
-		</ArticleHeader>
+			<MetaHeader accentColor={data.markdownRemark.frontmatter.accentColor}>
+			<Reading>{data.markdownRemark.fields.readingTime.text}</Reading>
+			<Date>{data.markdownRemark.frontmatter.date}</Date>
+			</MetaHeader>
+
 		</ArticleContentGrid>
 
-		<ArticleContentGrid2>
+		<br/>
+		<br/>
+		<br/>
 
+
+		<ArticleContentGrid>
 			<ArticleDetails>
 				<div>
-					<ArticleDetailsTitle>
-					WHAT IT IS
-					</ArticleDetailsTitle>
-					<h5>{data.markdownRemark.frontmatter.articleWHATITIS}</h5>
-				</div>
-				<div>
-					<ArticleDetailsTitle>
-					<br/>
-					WHAT IT'S BEST FOR
-					</ArticleDetailsTitle>
-					<h5>{data.markdownRemark.frontmatter.articleWHATITSBESTFOR}</h5>
-				</div>
-				<div>
-					<ArticleDetailsTitle>
-					<br/>
-					CLIENT
-					</ArticleDetailsTitle>
-					<h5>{data.markdownRemark.frontmatter.articleCLIENT}</h5>
-				</div>
-				<div>
-					<ArticleDetailsTitle>
-					<br/>
-					MY ROLE
-					</ArticleDetailsTitle>
-					<h5>{data.markdownRemark.frontmatter.articleROLE}</h5>
-				</div>
-				<div>
-					<ArticleDetailsTitle>
-					<br/>
-					RESULTS
-					</ArticleDetailsTitle>
-					<h5>{data.markdownRemark.frontmatter.articleRESULTS}</h5>
-					<br/>
-					<br/>
-					<br/>
+				<ImageAuthor>
+					<li><Icon><FaRegImage size={iconSize2}/></Icon> {data.markdownRemark.frontmatter.imageauthor} <Icon><FaCreativeCommons size={iconSize2}/></Icon></li>					
+				</ImageAuthor>
 				</div>
 			</ArticleDetails>
+		</ArticleContentGrid>
+
+
+
+		<br/>
+
+		<ArticleContentGrid2 accentColor={data.markdownRemark.frontmatter.accentColor} themeColor={data.markdownRemark.frontmatter.themeColor}>
+
 
 			<div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
 			{data.markdownRemark.frontmatter.showLiveContent && 
-				<LiveContentCard thumbnail={data.markdownRemark.frontmatter.image.childImageSharp.fluid.src} title={data.markdownRemark.frontmatter.title} url={data.markdownRemark.frontmatter.url} themeColor={data.markdownRemark.frontmatter.accentColor}/>
+				<LiveContentCard thumbnail={data.markdownRemark.frontmatter.image.childImageSharp.fluid.src} title={data.markdownRemark.frontmatter.title} url={data.markdownRemark.frontmatter.url} accentColor={data.markdownRemark.frontmatter.accentColor}/>
 			}
 			
 
@@ -92,17 +93,17 @@ export default function Template({ data }) {
 		<BackgroundColor themeColor={data.markdownRemark.frontmatter.themeColor}/>
 
 		
-		<Footer>
+		<Footer themeColor={data.markdownRemark.frontmatter.themeColor}>
 
 		<Line>
 		<hr></hr>
 		</Line>
 
-		<HeaderTitle>
-			<strong>Jude Park</strong> is a User Experience Designer + Researcher who develops technological innovations for social good.
+		<HeaderTitle accentColor={data.markdownRemark.frontmatter.accentColor}>
+			<strong>Jude Park</strong> is a User Experience Designer + Researcher who develops technological innovations for social change.
 		</HeaderTitle>
 		
-		<SiteSocial>
+		<SiteSocial accentColor={data.markdownRemark.frontmatter.accentColor}>
 		<li>
 				<IconMail>
 				<a href="mail:jude@judepark.com" target="_blank">
@@ -175,7 +176,88 @@ export default function Template({ data }) {
 				</IconYoutube>
 			</li>
 
+
+					<ArticleContentGrid>
+		<ArticleDetails>
+				<div>
+					<ArticleDetailsTitle>
+					Tagged
+					</ArticleDetailsTitle>
+					<ArticleDetailsContent>
+					{data.markdownRemark.frontmatter.tags}
+					</ArticleDetailsContent>
+				</div>
+				<div>
+					<ArticleDetailsTitle>
+					<br/>
+					NEXT
+					</ArticleDetailsTitle>
+					<h5>{data.markdownRemark.frontmatter.articleWHATITSBESTFOR}</h5>
+				</div>
+				<div>
+					<ArticleDetailsTitle>
+					<br/>
+					PREVIOUS
+					</ArticleDetailsTitle>
+					<h5>{data.markdownRemark.frontmatter.articleCLIENT}</h5>
+				</div>
+			</ArticleDetails>
+			</ArticleContentGrid>
+
 */
+
+const MetaHeader = styled.div`
+	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 0.8rem;
+	color: ${props => props.accentColor};
+	filter: opacity(100%);
+	letter-spacing: 1px;
+	line-height: 1.35;
+	font-weight: 500;
+	text-align: left;
+	display:inline-block;
+	margin-top:-18rem;
+	z-index: 5;
+	animation: ${fadeInDown} 1s;
+`;
+
+const Reading = styled.div`
+margin-bottom: 5px;
+@media(max-width: 720px) {
+	margin-top:15rem;
+	margin-bottom: 0px;
+	display:inline-block;
+	::after {
+		content: "⠀ · ⠀"; 
+		color: ${props => props.accentColor};
+	  }
+}
+`;
+
+const Date = styled.div`
+@media(max-width: 720px) {
+	margin-top:15rem;
+	display:inline-block;
+}
+`;
+
+const ArticleHeadingBanner = styled.div`
+    width: 100vw;
+    content: "";
+    left: -10vw;
+    height: 100vh;
+    top: -70vh;
+    right: -30vw;
+    position: absolute;
+		transform: rotate(25deg);
+		--accent-color: ${props => props.themeColor};
+		background: var(--accent-color, black);
+		z-index: -2;
+`;
+
+
+
 
 const ArticleHeader = styled.div`
 	height: 500px;
@@ -192,11 +274,11 @@ const ArticleHeader = styled.div`
 		max-width:100%;
 		position:absolute;
 		padding: 0px 0px 0px 400px;
-		
 
 		@media (max-width: 720px) {
 			padding: 0px 0px 0px 0px;
-			
+			margin-top:3rem;
+			max-height: 250px;
 		}
 	}
 
@@ -207,7 +289,7 @@ const ArticleHeader = styled.div`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, ${props => props.themeColor} 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, ${props => props.accentColor} 100%);
 	}
 
 	@media (max-width: 720px) {
@@ -223,12 +305,14 @@ const ImageLayout = styled.div`
 
 
 const ArticlePostTitle = styled.h1`
-	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	font-family: 'Crimson Text', serif,	-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: calc( 35px + (40 - 35) * (100vw - 400px) / (1300 - 400) );
+	font-size: calc( 45px + (50 - 45) * (100vw - 400px) / (1300 - 400) );
 	color: hsla(0, 0%, 0%, 0.80);
 	line-height: 1.35;
 	padding: 10px 15px 10px 15px;
+	margin-top: 250px;
+	margin-top: 250px;
 	font-weight: normal;
 	text-align: left;
 	max-width: 720px;
@@ -236,16 +320,14 @@ const ArticlePostTitle = styled.h1`
 	display:block;
 	z-index: 5;
 	animation: ${fadeInScaleDown} 1.5s ease-out;
-
 	@media(max-width: 720px) {
+		margin-top: 250px;
 	}
 `;
 
 const ArticleContentGrid = styled.div`
 	display: grid;
 	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
-	animation: ${fadeInUp} 1.8s;
-
 	& > * {
 		grid-column: center;
 	}
@@ -264,6 +346,10 @@ const ArticleContentGrid2 = styled.div`
 	}
 	p {
 		opacity: 0.85;
+		a {
+			background-color: transparent;
+			color: ${props => props.accentColor};
+		}
 	}
 `;
 
@@ -272,7 +358,7 @@ const ArticleDetails = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: -20px;
-	margin-top: -100px;
+	margin-top: 0px;
 	z-index: 1;
 	background: transparent;
 
@@ -282,6 +368,7 @@ const ArticleDetails = styled.div`
 		width: 100%;
 	}
 
+	/* *this is not being used, excluded:
 	@media(max-width: 1155px) {
 		padding: 0px;
     	margin-bottom: -20px;
@@ -295,6 +382,7 @@ const ArticleDetails = styled.div`
 			width: 50%;
 		}
 	}
+	*/
 `;
 
 const ArticleDetailsTitle = styled.div`
@@ -306,11 +394,63 @@ const ArticleDetailsTitle = styled.div`
 	letter-spacing: 0.5px;
 	font-weight: normal;
 	margin-bottom: 0px;
+	z-index:2;
 	animation: ${fadeInDown} 0.5s;
-	@media(maxs-width: 425px) {
+	@media(max-width: 425px) {
 		margin-top: 130px;
 	}
 `;
+
+const ArticleDetailsContent = styled.div`
+	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
+	color: hsla(0, 0%, 0%, 0.35);
+	line-height: 1.35;
+	word-spacing: 30px;
+	letter-spacing: 0.5px;
+	font-weight: normal;
+	margin-bottom: 0px;
+	animation: ${fadeInDown} 0.5s;
+	@media(max-width: 425px) {
+		margin-top: 130px;
+	}
+`;
+
+const ImageAuthor = styled.div`
+	display: inline-block;
+	flex-direction: column;
+	justify-content: flex-start;
+	writing-mode: vertical-rl;
+	align-items: none;
+	list-style: none;
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-right: 40px;
+	margin-left: 0px;
+	margin-bottom: 100px;
+	margin-top: -500px;
+	z-index:3;
+	color: hsla(0, 0%, 0%, 0.35);
+	animation: ${fadeInDown} .5s;
+	/*width: 100%;*/
+	li {
+		margin: 0;
+		padding: 0px 1px;
+	}
+	@media(max-width: 920px) {
+		display: none;
+	}
+`;
+
+const Icon = styled.div`
+	transform: rotate(90deg);
+	display: inline-block;
+`;
+
+
+
 
 const BackgroundColor = styled.div`
 	position: fixed;
@@ -321,11 +461,11 @@ const BackgroundColor = styled.div`
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	background-color: ${props => props.themeColor};
+	background-color: ${props => props.accentColor};
 `;
 
 const Footer = styled.div`
-	background-color: #ffcc00;
+	background-color: ${props => props.themeColor};
 	margin-bottom: -170px;
 	display: grid;
 	grid-template-columns: [start] minmax(24px, 1fr) [center] minmax(auto, 1100px) [end] minmax(24px, 1fr);
@@ -359,6 +499,7 @@ const SiteSocial = styled.ul`
 			text-decoration: none;
 			color: hsla(0, 0%, 0%, 0.35);
 			transition: all 0.3s;
+			color: ${props => props.accentColor};
 		}
 	}
 	@media(max-width: 1155px) {
@@ -437,7 +578,8 @@ const HeaderTitle = styled.h1`
 	font-family: 'Product Sans', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: calc( 12px + (17 - 12) * (100vw - 400px) / (1300 - 400) );
-	color: hsla(0, 0%, 0%, 0.35);
+	color: ${props => props.accentColor};
+	filter: opacity(100%);
 	line-height: 1.35;
 	font-weight: normal;
 	margin-bottom: 20px;
@@ -461,6 +603,13 @@ const Line = styled.p`
 	}
 `;
 
+const LoadingScreen = styled.div`
+background-color: ${props => props.accentColor};
+animation: ${LoadScreen} 1s;
+animation-fill-mode: forwards;  
+margin-bottom:-30px
+`;
+
 
 export const query = graphql`
 	query ArticleBySlug($slug: String!) {
@@ -472,18 +621,12 @@ export const query = graphql`
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			frontmatter {
 				title
-				articleWHATITIS
-				articleWHATITSBESTFOR
-				articleCLIENT
-				articlePLATFORM
-				articleBUILD
-				articleLINKS
-				articleROLE
-				articleRESULTS
-				articleShortBrief
+				url
+				date(formatString: "MMMM D, YYYY")
+				tags
 				themeColor
 				accentColor
-				url
+				imageauthor
 				showLiveContent
 				image {
 					childImageSharp {
@@ -496,6 +639,9 @@ export const query = graphql`
 			html
 			fields {
 				slug
+				readingTime {
+					text
+				  }
 			}
 		}
 	}

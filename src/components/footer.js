@@ -8,8 +8,10 @@ const Footer = () => {
 		<div>
       <br />
       <footer>
-       © {new Date().getFullYear()} JUDE PARK
+				Made with 💛 in Toronto
        <br />
+			 © {new Date().getFullYear()} JUDE PARK
+			 <br />
 				{` `}
         </footer>
         </div>

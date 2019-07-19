@@ -1,21 +1,15 @@
 ---
 title: " Solving Youth Unemployment through Co-Design"
 url: ""
-articleShortBrief: "Meet Lumii: The personal career agent for young Canadians aged 15-29"
-articleWHATITIS: "Personal career agent AI"
-articleWHATITSBESTFOR: "Converting experiences into skills"
-articleCLIENT: "RBC Future Launch"
-articlePLATFORM: "iOS Mobile + Website"
-articleBUILD: "Node.js, React, Amazon Web Services, Sketch"
-articleLINKS: "rbc.com/dms/enterprise/futurelaunch"
-articleROLE: "Co-Design Sessions Lead, UX Research, UI/UX Design"
-articleRESULTS: "Built an chatbot app with artificial intelligence capabilities for deployment"
-themeColor: "#fafafa"
-accentColor: "#ffcc00"
+date: "2017-12-01"
+tags: ["Animals", "Chicago", "Zoos"]
+themeColor: "rgba(183, 134, 11, 0.05)"
+accentColor: "#b8860b"
 image: "Untitled3.png"
 thumb: "Untitled2.png"
+imageauthor: "Jude Park"
 showLiveContent: false
-sortDate: "2017-12-01"
+
 ---
 
 #We were tasked to develop a technology-based solution that helps prepare youth for the future of work.
